@@ -1,0 +1,10 @@
+.CodeMirror {
+    height: 43.5vh;
+    /* font-family: 'Ubuntu Mono', monospace !important; */
+    /* font-family: "IBM Plex Mono", monospace; */
+    font-size: 2rem;
+}
+
+.react-codemirror2 {
+  width: 100%;
+}

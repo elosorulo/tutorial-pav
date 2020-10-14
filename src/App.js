@@ -1,26 +1,64 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Grid from '@material-ui/core/Grid';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import TextEditor from './components/TextEditor';
+import Terminal from './components/Terminal';
+import LanguageService from './services/LanguageService';
+import GlobalStyle from './components/style/GlobalStyle';
+import styled from 'styled-components';
+import border from './components/style/border';
+import StyledSVG from './components/SvgView';
+import Tutorial from './components/tutorial/Tutorial';
+
+const WindowContainer = styled.div`
+    ${border}
+    margin: 1.5%;
+    width: 97%;
+    height: 100%;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+
+const App = () => {
+
+    const [consoleContent, setConsoleContent] = React.useState("");
+
+    return(
+        <React.Fragment>
+            <GlobalStyle/>
+            <Grid container direction={"row"} justify={"center"} spacing={1}>
+                <Grid item xs={12} sm={6}>
+                    <Grid container justify={"center"}>
+                        <Grid item xs={12} style={{height: "48vh"}}>
+                            <WindowContainer>
+                                <TextEditor setConsoleContent={setConsoleContent} run={LanguageService.run}/>
+                            </WindowContainer>
+                        </Grid>
+                        <Grid item xs={12} style={{height: "48vh"}}>
+                            <WindowContainer>
+                                <Tutorial/>
+                            </WindowContainer>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Grid container justify={"center"}>
+                        <Grid item xs={12} style={{height: "68vh"}}>
+                            <WindowContainer>
+                                <StyledSVG/>
+                            </WindowContainer>
+                        </Grid>
+                        <Grid item xs={12} style={{height: "28vh"}}>
+                            <Terminal content={consoleContent}/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </React.Fragment>
+    );
+};
 
 export default App;
