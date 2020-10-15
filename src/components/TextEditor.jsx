@@ -60,7 +60,18 @@ const EditorHeader = (props)=> {
 };
 
 const TextEditor = (props) => {
-    const [content, setContent] = React.useState("");
+
+    React.useEffect(() =>
+      props.setRenderer(props.setCode)
+    , []);
+    
+    const [content, setContent] = React.useState(
+`Ejecutar(
+  Dibujar(
+    Circulo
+  )
+)
+`);
 
     const onBeforeChange = (editor, data, value) => {
         setContent(value);
@@ -68,14 +79,17 @@ const TextEditor = (props) => {
 
     const execute = () => {
         try {
-          const formatted = JSON.stringify(props.run(content), null, "\t");
-          props.setConsoleContent(formatted);
-          console.log(formatted);
+          props.run(content);
+          props.setConsoleContent("Se ejecutó corectamente");
+          props.isSuccess(true);
         } catch(error) {
           console.log(error);
+          props.isSuccess(false);
           props.setConsoleContent(error.message);          
         }
     };
+
+    React.useEffect(() => execute(), []);
 
     return (
       <Grid container spacing={0}>

@@ -25,7 +25,8 @@ const WindowContainer = styled.div`
 const App = () => {
 
     const [consoleContent, setConsoleContent] = React.useState("");
-
+    const [code, setCode] = React.useState([]);
+    const [success, isSuccess] = React.useState(true);
     return(
         <React.Fragment>
             <GlobalStyle/>
@@ -34,7 +35,13 @@ const App = () => {
                     <Grid container justify={"center"}>
                         <Grid item xs={12} style={{height: "48vh"}}>
                             <WindowContainer>
-                                <TextEditor setConsoleContent={setConsoleContent} run={LanguageService.run}/>
+                                <TextEditor
+                                    isSuccess={isSuccess}
+                                    setCode={setCode}
+                                    setConsoleContent={setConsoleContent}
+                                    setRenderer={LanguageService.setRenderer}
+                                    run={LanguageService.run}
+                                />
                             </WindowContainer>
                         </Grid>
                         <Grid item xs={12} style={{height: "48vh"}}>
@@ -48,11 +55,11 @@ const App = () => {
                     <Grid container justify={"center"}>
                         <Grid item xs={12} style={{height: "68vh"}}>
                             <WindowContainer>
-                                <StyledSVG/>
+                                <StyledSVG code={code}/>
                             </WindowContainer>
                         </Grid>
                         <Grid item xs={12} style={{height: "28vh"}}>
-                            <Terminal content={consoleContent}/>
+                            <Terminal content={consoleContent} success={success}/>
                         </Grid>
                     </Grid>
                 </Grid>

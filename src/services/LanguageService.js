@@ -1,4 +1,5 @@
-const COLOR_TYPE = "COLOR"
+import { COLOR_TYPE, SHAPE_TYPE, SHAPE_FORMS, COLORS } from './LanguageConstants';
+import { cloneDeep } from 'lodash';
 
 const simpleColor = (color) => {
     return {
@@ -29,27 +30,9 @@ const combine = (shape1, shape2) => {
 }
 
 const colorize = (shape, color) => {
-    return shape.type === SHAPE_TYPE.Simple ? simpleShape(shape, color) : combinedShape(shape.shapes.map(s => simpleShape(s.form, color)))
+    return shape.type === SHAPE_TYPE.Simple ? simpleShape(shape.form, color) : combinedShape(shape.shapes.map(s => simpleShape(s.form, color)))
 }
 
-const SHAPE_TYPE = {
-    Simple: "Simple",
-    Combined: "Combinada"
-}
-
-const SHAPE_FORMS = {
-    Circle: "Circulo",
-    Triangle: "Triangulo",
-    Square: "Cuadrado"
-};
-
-const COLORS = {
-    RED: "Rojo",
-    GREEN: "Verde",
-    BLUE: "Azul",
-    WHITE: "Blanco",
-    BLACK: "Negro"
-}
 
 function skipSpace(string) {
     var first = string.search(/\S/);
@@ -158,7 +141,7 @@ specialForms.Colorear = (args, scope) => {
     let color = evaluate(args[1], scope);
     if(color.type !== COLOR_TYPE) throw new SyntaxError("El segundo argumento de 'Colorear' debe ser un color.");
     
-    const value = colorize(shape, color)
+    const value = cloneDeep(colorize(shape, color))
     return value;
 };
 
@@ -175,14 +158,20 @@ specialForms.Combinar = (args, scope) => {
     return combine(shape1, shape2);
 };
 
-specialForms.Dibujar = (args, scope) => {
-    if (args.length != 2 || args[0].type != "word") {
-      throw new SyntaxError("USo incorrecto de 'Dibujar'");
-    }
-    let value = evaluate(args[1], scope);
-    scope[args[0].name] = value;
-    return value;
-};
+const setRenderer = (setCode) => {  
+  specialForms.Dibujar = (args, scope) => {
+      if (args.length != 1) {
+        throw new SyntaxError("'Dibujar' solo lleva 1 parámetro");
+      }
+      let shape = evaluate(args[0], scope);
+      if(shape.type !== SHAPE_TYPE.Simple && shape.type !== SHAPE_TYPE.Combined) {
+        throw new SyntaxError("'Dibujar' espera 1 parámetro del tipo forma.");
+      }
+      let value = evaluate(args[0], scope);
+      setCode(value);
+      return value;
+  };
+}
     
 var topScope = Object.create(null);
 
@@ -192,16 +181,16 @@ topScope.Rojo       = simpleColor(COLORS.RED)
 topScope.Verde      = simpleColor(COLORS.GREEN)
 topScope.Azul       = simpleColor(COLORS.BLUE)
 
-topScope.Circulo    = simpleShape(SHAPE_FORMS.Circle, COLORS.WHITE)
-topScope.Cuadrado   = simpleShape(SHAPE_FORMS.Square, COLORS.WHITE)
-topScope.Triangulo  = simpleShape(SHAPE_FORMS.Triangle, COLORS.WHITE)
+topScope.Circulo    = simpleShape(SHAPE_FORMS.Circle, topScope.Blanco)
+topScope.Cuadrado   = simpleShape(SHAPE_FORMS.Square, topScope.Blanco)
+topScope.Triangulo  = simpleShape(SHAPE_FORMS.Triangle, topScope.Blanco)
 
-
-function run(program) {
+const run = (program) => {
   return evaluate(parse(program), Object.create(topScope));
 }
 
 const LanguageService = {
+    setRenderer: setRenderer,
     run: run
 };
 

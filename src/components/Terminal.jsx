@@ -9,7 +9,7 @@ const TerminalContainer = styled.div`
     padding: 1.5%;
     height: 90%;
     background: ${Theme.primaryColor};
-    color: #00FF00;
+    color: ${props => props.success ? "#00FF00" : "#FF0000"};
     font-family: 'Operator Mono', 'Source Sans Pro', Menlo, Monaco, Consolas,
 		Courier New, monospace;
     font-size: 1rem;
@@ -19,8 +19,8 @@ const TerminalContainer = styled.div`
 
 const formatContent = (content) => {
     return <React.Fragment>
-            <React.Fragment>{">"}</React.Fragment>
-            {("\n" + content).split("\n").map(line =>
+            <React.Fragment>{"> "}</React.Fragment>
+            {(content).split("\n").map(line =>
                 <React.Fragment>{line.replace("\t", '\xa0' + '\xa0')}<br/></React.Fragment>
             )}
         </React.Fragment>
@@ -29,7 +29,7 @@ const formatContent = (content) => {
 const Terminal = (props) => {
 
     return (
-        <TerminalContainer>
+        <TerminalContainer success={props.success}>
             <p>
             {
                 props.content === "{}" ? ">" : formatContent(props.content)
