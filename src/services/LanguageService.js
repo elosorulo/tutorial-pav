@@ -1,5 +1,5 @@
 import { COLOR_TYPE, SHAPE_TYPE, SHAPE_FORMS, COLORS } from './LanguageConstants';
-import { cloneDeep } from 'lodash';
+import { cloneDeep, flatMap } from 'lodash';
 
 const simpleColor = (color) => {
     return {
@@ -19,7 +19,7 @@ const simpleShape = (form, color) => {
 const combinedShape = (shapes) => {
     return {
         type: SHAPE_TYPE.Combined,
-        shapes: shapes.flatMap(shape =>
+        shapes: flatMap(shapes, shape =>
             shape.type === SHAPE_TYPE.Combined ? shape.shapes : [shape]
         )
     }
