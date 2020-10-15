@@ -183,7 +183,15 @@ A Combinar le pasamos como parámetro 2 formas, y nos genera una nueva, Podemos 
 
 Podemos combinar varios de estos procedimientos de combinación para generar programas más complejos, como por ejemplo colorear una forma y usarla como parámetro de Combinar:
 
-Para avanzar con lo que sigue vamos a empezar a realizar una abstracción del código en la cual vamos a entender como se ejecuta el código en secuencia. Tomemos el siguiente código:
+Imaginenlo como si tuviesemos una función **f(x) = x + 1**, y otra función **g(x) = x * 2**.
+
+Si combinamos el resultado de **f(x)** y ese resultado lo ponemos como el parámetro de **g(x)** estamos haciendo una composición.
+
+De esa manera si ejecutamos las funciones asi: **g(f(2))**, obtenemos primero de **f(2)**, que como resultado nos devuelve **3**, y sobre ese **3** aplicamos **g(3)**, lo cual nos devuelve 6.
+
+Esto de componer entre procedimientos es similar a componer entre funciones matemáticas, es una manera de componer procedimientos más complejos a partir de procedimientos más simples.
+
+Para avanzar con lo que sigue vamos a empezar a realizar un diagrama del código en la cual vamos a entender como se ejecuta el código en secuencia. Tomemos el siguiente código:
 
 \`\`\`
 Ejecutar(
@@ -216,6 +224,7 @@ En este diagrama vemos enumerado el paso a paso de la ejecución con números qu
 Este diagrama se lo conoce como **Modelo de Sustitución**. Es decir, vamos reemplazando paso a paso como fué la ejecución de cada procedimiento y en que orden se evaluan los datos. 
 
 `,`
+
 Si queremos generar una combinación de tres formas, podemos usar el resultado de Combinar como un parámetro de de otro llamado al procedimiento de Combinar: 
 
 \`\`\`
