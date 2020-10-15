@@ -22,8 +22,9 @@ En la inferfaz de arriba a la izquierda hay un editor de texto, en el cual vamos
 
 Si queremos ejecutar el código arriba a la derecha del editor hay un botón que dice Ejecutar.
 
-A la derecha hay una imagen generada por el interprete del lenguaje al ejecutar el código.
-Para generar estas imagenes el interprete lee este código, aplica cada declaración, y en función del resultado genera una imágen. A lo largo del tutorial vamos a explorar este lenguaje y es necesario que editen el código que aparece en el editor y lo ejecuten para poner en práctica los conceptos y realizar los programas.
+A la derecha hay una imagen generada a partir del resultado de ejecutar el código.
+
+A lo largo del tutorial vamos a explorar este lenguaje y es necesario que editen el código que aparece en el editor y lo ejecuten para poner en práctica los conceptos y realizar los programas.
 `,`
 ## Datos y Procedimientos.
 
