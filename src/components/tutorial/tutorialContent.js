@@ -129,6 +129,8 @@ Como vemos los datos que pasamos como parámetro para poder dibujar es uno de lo
 \`\`\`
 
 Estos datos son lo que llamamos **Primitivos**. Los primitivos son los tipos de datos más elementales que nos aporta un lenguaje de programación, en el caso de este lenguaje son formas geométricas.
+
+\`\`\`Dibujar\`\`\` es un procedimiento que recibe un solo parámetro, y tiene que ser si o si una forma, Más adelante vamos a ver como combinar más formas para poder pasarlas como parámetro de \`\`\`Dibujar\`\`\`.
 `,`
 Recuerden que en este lenguaje de programación no usamos caracteres especiales (tildes, etc) en los nombres de los procedimientos o en los nombres de los primitivos, y que los procedimientos y primitivos comienzan con mayuscula.
 También recuerden que los procedimientos tienen un conjunto de paréntesis **()** luego del nombre, dentro del cual pasamos los datos como parámetros.
