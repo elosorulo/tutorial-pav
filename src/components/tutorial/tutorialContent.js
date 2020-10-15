@@ -191,6 +191,8 @@ De esa manera si ejecutamos las funciones asi: **g(f(2))**, obtenemos primero de
 
 Esto de componer entre procedimientos es similar a componer entre funciones matemáticas, es una manera de componer procedimientos más complejos a partir de procedimientos más simples.
 
+Esto parece complicado pero a medida que avancemos se vá a asimilar mejor el concepto.
+
 Para avanzar con lo que sigue vamos a empezar a realizar un diagrama del código en la cual vamos a entender como se ejecuta el código en secuencia. Tomemos el siguiente código:
 
 \`\`\`
