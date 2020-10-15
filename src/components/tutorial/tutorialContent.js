@@ -157,7 +157,7 @@ Los colores disponibles son:
 
 El color negro sirve si queremos ocultar una forma, dado que es el mismo color que el fondo de la imágen.
 Con esto vemos que por ahora tenemos los procedimientos
-`,`
+
 - \`\`\`Ejecutar(Declaracion1, Declaracion2, Declaracion3)\`\`\`: En el cual le pasamos la cantidad de declaraciones que querramos ejecutar. A este método solo lo llamamos una sola vez.
 - \`\`\`Dibujar(Forma)\`\`\`: El cual recibe como primer parámetro una forma (Circulo, Triangulo o Cuadrado).
 - \`\`\`Colorear(Forma, Color)\`\`\`: El cual nos genera una forma de cierto color a partir de una Forma como primer parámetro \`\`\`(Circulo, Triangulo o Cuadrado)\`\`\`
