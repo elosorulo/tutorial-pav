@@ -143,6 +143,9 @@ Ejecutar(
         Colorear(Triangulo, Rojo)
     )
 )
+
+Recordemos que \`\`\`Dibujar\`\`\` requiere que pasemos una sola Forma como parámetro.
+
 \`\`\`
 
 En este procedimiento aparece otro primitivo, el Color. El primer parámetro de Colorear es una forma, y el segundo es un color. Si pasamos primero un color y luego una forma, el procedimiento no va a funcionar. Es importante respetar el orden de los parámetros.
@@ -158,6 +161,10 @@ Los colores disponibles son:
 \`\`\`
 
 El color negro sirve si queremos ocultar una forma, dado que es el mismo color que el fondo de la imágen.
+
+Es importante entender que \`\`\`Colorear\`\`\` devuelve como resultado otra forma con el color cambiado, y por eso podemos pasarle esa forma como parámetro al procedimiento \`\`\`Dibujar\`\`\`.
+`,`
+
 Con esto vemos que por ahora tenemos los procedimientos
 
 - \`\`\`Ejecutar(Declaracion1, Declaracion2, Declaracion3)\`\`\`: En el cual le pasamos la cantidad de declaraciones que querramos ejecutar. A este procedimiento solo lo usamos una sola vez, y lo usamos para definir dentro de el las distintas declaraciones.
@@ -178,6 +185,9 @@ Ejecutar(
         Combinar(Triangulo, Cuadrado)
     )
 )
+
+Recordemos que Dibujar requiere que pasemos una sola Forma como parámetro.
+
 \`\`\`
 En este ejemplo, estamos combinando un Triangulo y un Cuadrado y este nos genera una forma nueva que es una combinación de los dos, luego se lo pasamos como parámetro a \`\`\`Ejecutar\`\`\`.
 
