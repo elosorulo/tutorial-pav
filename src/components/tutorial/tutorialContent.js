@@ -221,7 +221,7 @@ Para verlo de otra manera, imaginenlo como si tuviesemos una función **f(x) = x
 
 Si combinamos el resultado de **f(x)** y ese resultado lo ponemos como el parámetro de **g(x)** estamos haciendo una composición.
 
-De esa manera si ejecutamos las funciones asi: **g(f(2))**, obtenemos primero de **f(2)**, que como resultado nos devuelve **3**, y sobre ese **3** aplicamos **g(3)** obtenemos un 6 como resultado final.
+De esa manera si ejecutamos las funciones asi: **g(f(2))**, obtenemos primero el resultado de **f(2)**, que como resultado nos devuelve **3**, y sobre ese **3** aplicamos **g(3)** obtenemos un 6 como resultado final.
 
 Componer entre procedimientos es similar a componer entre funciones matemáticas, es una manera de componer procedimientos más complejos a partir de procedimientos más simples.
 
