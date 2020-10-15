@@ -298,7 +298,9 @@ Ejecutar(
 )
 \`\`\`
 
-En este programa estamos utilizando varios parámetros dentro de \`\`\`Ejecutar\`\`\`. Pero además estamos usando este nuevo procedimiento: \`\`\`Definir\`\`\`.
+En este programa estamos utilizando varios parámetros dentro de \`\`\`Ejecutar\`\`\`. Es importante recordar que cada parámetro que pasamos dentro de \`\`\`Ejecutar\`\`\` es una declaración.
+
+Además estamos usando este nuevo procedimiento: \`\`\`Definir\`\`\`.
 `,`
 Este procedimiento recibe un parámetro con un primitivo nuevo que sería una 'cadena de texto', la cual va siempre entre comillas dobles "". 
 
