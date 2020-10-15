@@ -179,6 +179,11 @@ Ahora vamos a ver un procedimiento nuevo que extiende un poco el concepto de Col
 Esto es otra base fundamental de cualquier lenguaje de programación: los **Medios de Combinación**, es decir, son procedimientos que nos permiten combinar primitivos.
 
 Vamos a ver otro procedimiento que también es un medio de combinacion: \`\`\`Combinar\`\`\`.
+
+
+Para avanzar con lo que sigue vamos a empezar a realizar un diagrama del código en la cual vamos a entender como se ejecuta el código en secuencia. Tomemos el siguiente código:
+
+
 \`\`\`
 Ejecutar(
     Dibujar(
@@ -186,35 +191,14 @@ Ejecutar(
     )
 )
 \`\`\`
-
-Recordemos que \`\`\`Dibujar\`\`\` requiere que pasemos una sola Forma como parámetro.
-
-En este ejemplo, estamos combinando un Triangulo y un Cuadrado y este nos genera una forma nueva que es una combinación de los dos, luego se lo pasamos como parámetro a \`\`\`Ejecutar\`\`\`.
-
-Al procedimiento \`\`\`Combinar\`\`\` le pasamos como parámetro 2 formas, y nos genera una nueva, Podemos pasarle las formas que querramos, pero siempre 2.
-
-Podemos combinar varios de estos procedimientos de combinación para generar programas más complejos, como por ejemplo colorear una forma y usarla como parámetro de Combinar:
 `,`
 
-\`\`\`
-Ejecutar(
-    Dibujar(
-        Combinar(
-            Triangulo,
-            Colorear(Cuadrado, Rojo)
-        )
-    )
-)
-\`\`\`
-
-Para avanzar con lo que sigue vamos a empezar a realizar un diagrama del código en la cual vamos a entender como se ejecuta el código en secuencia. Tomemos el siguiente código:
-
-Si realizamos un análisis gráfico de como se ejecuta este tenemos el siguiente diagrama:
+Si realizamos un análisis gráfico de como se ejecuta este código obtenemos el siguiente diagrama:
 
 <blockquote>
-<p align="center">
-<img src="https://i.ibb.co/Yj8m0qK/diagrama-1.png" alt="diagrama-1" border="0">
-</p>
+    <p align="center">
+        <img src="https://i.ibb.co/BzSwD1r/diagrama-1.png" alt="diagrama-1" border="0">
+    </p>
 </blockquote>
 
 En este diagrama vemos enumerado el paso a paso de la ejecución con números que lo indican:
@@ -228,6 +212,12 @@ En este diagrama vemos enumerado el paso a paso de la ejecución con números qu
 
 Este diagrama se lo conoce como **Modelo de Sustitución**. Es decir, vamos reemplazando paso a paso como fué la ejecución de cada procedimiento y en que orden se evaluan los datos. 
 
+Recordemos que \`\`\`Dibujar\`\`\` requiere que pasemos una sola Forma como parámetro.
+
+En este ejemplo, estamos combinando un Triangulo y un Cuadrado y este nos genera una forma nueva que es una combinación de los dos, luego se lo pasamos como parámetro a \`\`\`Ejecutar\`\`\`.
+
+Al procedimiento \`\`\`Combinar\`\`\` le pasamos como parámetro 2 formas, y nos genera una nueva, Podemos pasarle las formas que querramos, pero siempre tenemos que pasar 2 parámetros para este procedimiento.
+
 `,`
 Para verlo de otra manera, imaginenlo como si tuviesemos una función **f(x) = x + 1** (la cual suma 1 a un valor x), y otra función **g(x) = x * 2** (la cual multiplica por 2 a un valor x).
 
@@ -238,6 +228,28 @@ De esa manera si ejecutamos las funciones asi: **g(f(2))**, obtenemos primero el
 Componer entre procedimientos es similar a componer entre funciones matemáticas, es una manera de componer procedimientos más complejos a partir de procedimientos más simples.
 
 Esto parece complicado pero a medida que avancemos se vá a asimilar mejor el concepto.
+`,`
+
+Podemos combinar varios de estos procedimientos de combinación para generar programas más complejos, como por ejemplo colorear una forma y usarla como parámetro de Combinar:
+
+\`\`\`
+Ejecutar(
+    Dibujar(
+        Combinar(
+            Triangulo,
+            Colorear(Cuadrado, Rojo)
+        )
+    )
+)
+\`\`\`
+
+Veamos el modelo de sustitución:
+
+<blockquote>
+    <p align="center">
+        <img src="https://i.ibb.co/TcMKtZV/diagrama-2.png" alt="diagrama-2" border="0">
+    </p>
+</blockquote>
 `,`
 
 Si queremos generar una combinación de tres formas, podemos usar el resultado de Combinar como un parámetro de de otro llamado al procedimiento de Combinar: 
@@ -256,14 +268,6 @@ Ejecutar(
 )
 \`\`\`
 
-Veamos el modelo de sustitución:
-
-<blockquote>
-    <p align="center">
-        <img src="https://i.ibb.co/X2Lpwbv/diagrama-2.png" alt="diagrama-2" border="0">
-    </p>
-</blockquote>
-
 `,`
 También podemos expandir este concepto usando el procedimiento de Colorear a uno de los parámetros:
 
@@ -281,11 +285,11 @@ Ejecutar(
 )
 \`\`\`
 
-Y por último veamos el modelo de sustitución de este código:
+Por último veamos el modelo de sustitución de este código:
 
 <blockquote>
     <p align="center">
-        <img src="https://i.ibb.co/yFcMQVm/diagrama-3.png" alt="diagrama-3" border="0">
+        <img src="https://i.ibb.co/w6SNwz8/diagrama-3.png" alt="diagrama-3" border="0">
     </p>
 </blockquote>
 
