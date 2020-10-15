@@ -10,7 +10,9 @@ La programación hoy se conoce como parte de las ciencias de la computación o d
 La práctica de la programación en sí no tiene que ver tanto con la computación.
 
 `,`
-Una descripción muy buena sobre la programación la define como una **epistemología de los procesos**. Programar consiste principalmente en definir procesos que eventualmente pueden o no ser ejecutados por una computadora, y la programación consiste en definir estos procesos.
+Una descripción muy buena sobre la programación la define como un **estudio de los procesos**.
+
+Programar consiste principalmente en definir procesos que eventualmente pueden o no ser ejecutados por una computadora, y la programación consiste en definir estos procesos.
 De la misma manera en que la matemática se preocupa por **lo que es**, la programación se preocupa por **cómo se hace**.
 
 Para programar en primer lugar utilizamos un **lenguaje de programación** que es una manera de poder expresar un procedimiento y que sea entendible tanto por una computadora como por una persona.
