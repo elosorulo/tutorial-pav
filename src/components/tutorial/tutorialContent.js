@@ -143,10 +143,10 @@ Ejecutar(
         Colorear(Triangulo, Rojo)
     )
 )
+\`\`\`
 
 Recordemos que \`\`\`Dibujar\`\`\` requiere que pasemos una sola Forma como parámetro.
 
-\`\`\`
 
 En este procedimiento aparece otro primitivo, el Color. El primer parámetro de Colorear es una forma, y el segundo es un color. Si pasamos primero un color y luego una forma, el procedimiento no va a funcionar. Es importante respetar el orden de los parámetros.
 `,`
@@ -185,10 +185,10 @@ Ejecutar(
         Combinar(Triangulo, Cuadrado)
     )
 )
-
-Recordemos que Dibujar requiere que pasemos una sola Forma como parámetro.
-
 \`\`\`
+
+Recordemos que \`\`\`Dibujar\`\`\` requiere que pasemos una sola Forma como parámetro.
+
 En este ejemplo, estamos combinando un Triangulo y un Cuadrado y este nos genera una forma nueva que es una combinación de los dos, luego se lo pasamos como parámetro a \`\`\`Ejecutar\`\`\`.
 
 Al procedimiento \`\`\`Combinar\`\`\` le pasamos como parámetro 2 formas, y nos genera una nueva, Podemos pasarle las formas que querramos, pero siempre 2.
