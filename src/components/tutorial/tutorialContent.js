@@ -158,7 +158,7 @@ Los colores disponibles son:
 El color negro sirve si queremos ocultar una forma, dado que es el mismo color que el fondo de la imágen.
 Con esto vemos que por ahora tenemos los procedimientos
 
-- \`\`\`Ejecutar(Declaracion1, Declaracion2, Declaracion3)\`\`\`: En el cual le pasamos la cantidad de declaraciones que querramos ejecutar. A este método solo lo llamamos una sola vez.
+- \`\`\`Ejecutar(Declaracion1, Declaracion2, Declaracion3)\`\`\`: En el cual le pasamos la cantidad de declaraciones que querramos ejecutar. A este procedimiento solo lo usamos una sola vez, y lo usamos para definir dentro de el las distintas declaraciones.
 - \`\`\`Dibujar(Forma)\`\`\`: El cual recibe como primer parámetro una forma (Circulo, Triangulo o Cuadrado).
 - \`\`\`Colorear(Forma, Color)\`\`\`: El cual nos genera una forma de cierto color a partir de una Forma como primer parámetro \`\`\`(Circulo, Triangulo o Cuadrado)\`\`\`
 y un color como segundo parámetro \`\`\`(Rojo, Verde, Azul, Blanco o Negro)\`\`\`.
@@ -292,7 +292,7 @@ Este procedimiento recibe un parámetro con un primitivo nuevo que sería una 'c
 
 Mediante una cadena de texto le asignamos un nombre a nuestra definición \`\`\`MiForma\`\`\`, y como segundo parámetro le pasamos el procedimiento \`\`\`Combinar\`\`\`.
 
-Luego nosotros llamamos al procedimiento \`\`\`Dibujar\`\`\` y este hace referencia a \`\`\`MiForma\`\`\`, el cual es conocido por nuestro programa porque en la declaración anterior la definimos usando el método \`\`\`Definir\`\`\`.
+Luego nosotros llamamos al procedimiento \`\`\`Dibujar\`\`\` y este hace referencia a \`\`\`MiForma\`\`\`, el cual es conocido por nuestro programa porque en la declaración anterior la definimos usando el procedimiento \`\`\`Definir\`\`\`.
 
 Definir recibe siempre como primer parámetro una cadena de texto, y como segundo parámetro puede recibir cualquier otro primitivo.
 
