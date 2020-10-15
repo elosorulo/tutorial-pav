@@ -333,6 +333,28 @@ Definir es lo que se conoce como \`\`\`Medios de Abstracción\`\`\` Que son la �
 Los medios de abstracción nos permite generar una abstracción agregandola al contexto para poder reutilizar esa abstracción en las declaraciones siguientes del programa.
 Si nosotros quisieramos llamar a \`\`\`MiForma\`\`\` antes de definirla, el programa fallaría, porque aún no es conocida por el contexto de este lenguaje, por eso es importante respetar el orden.
 `,`
+
+Por último, veamos como podemos utilizar muchas declaraciones en secuencia para generar patrones aún más complejos utilizando el procedimiento \`\`\`Definir\`\`\`.
+
+\`\`\`
+Ejecutar(
+    Definir("TrianguloVerde", Colorear(Triangulo, Verde)),
+    Definir("TrianguloRojo", Colorear(Triangulo, Rojo)),
+    Definir("CuadradoAzul", Colorear(Cuadrado, Azul)),
+    Definir("Forma1", Combinar(TrianguloVerde, TrianguloRojo)),
+    Definir("Forma2", Combinar(CuadradoAzul, Triangulo)),
+    Definir("FormaFinal", Combinar(Forma1, Forma2)),
+    Dibujar(FormaFinal)
+)
+\`\`\`
+
+En este código vemos:
+- Cómo utilizar muchas declaraciones en secuencia dentro del procedimiento \`\`\`Ejecutar\`\`\`.
+- Como vamos generando distintas formas en cada declaración mediante el procedimiento \`\`\`Definir\`\`\`.
+- Como combinamos estas formas, en formas aún más complejas reutilizando las definiciones anteriores en cada declaración.
+- Como renderizamos nuestra **FormaFinal** llamando al procedimiento \`\`\`Dibujar\`\`\`.
+`,`
+
 ## Cierre
 A modo repaso, comenzamos aprendiendo que es un procedimiento, que rol cumplen los datos en los procedimientos, y que es una declaración.
 En el tutorial fuimos explorando el lenguaje y también aprendimos las 3 bases fundamentales de cualquier lenguaje de programación, que siempre tienen que resonar a la hora de aprender
